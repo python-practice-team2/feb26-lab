@@ -8,6 +8,9 @@ class Database():
     def add_item(self, new_item):
         self.items.append(new_item)
 
+    def get_item(self):
+        return self.items
+
     def display_items(self):
         for item in self.items:
             print(item)
@@ -20,23 +23,10 @@ class Database():
     def buy_item(self, id):
         for item in self.items:
             if item.id == id:
-                item.sell_item
+                item.sold(1)
 
     def buy_items(self, id, amount):
         for item in self.items:
             if item.id == id:
                 item.sell_items(amount)
     
-    
-if __name__ == "__main__":
-    item1 = item.Item(1, "Kitkat", 5, 2, 10, True)
-    item2 = item.Item(2, "Coke", 3, 1, 10, True)
-
-    store = Database()
-    store.add_item(item1)
-    store.add_item(item2)
-
-    print()
-    store.display_items()
-    store.perish()
-    store.display_items()
